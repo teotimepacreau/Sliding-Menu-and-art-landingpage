@@ -12,5 +12,5 @@
 - responsive handle
 - Vanilla JS class toggle with click listener
 
-🛠️
+# 🛠️
 HTML, CSS, Vanilla JavaScript
