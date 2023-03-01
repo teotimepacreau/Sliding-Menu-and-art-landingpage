@@ -1,0 +1,283 @@
+/* CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default list styles */
+ul, ol, li {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+}    
+
+/* Set core root defaults */
+html:focus-within {
+scroll-behavior: smooth;
+}
+    
+/* A element that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+    
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%; /* img should never overflow past the available space*/
+  display: block;
+  height: auto;/*preserve aspect ratio*/
+}
+
+/* More consistent, styleable hr*/
+hr {
+  border-width: 1px 0 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* More space above the underline */
+a {
+  text-underline-offset: 0.2ex;
+}
+
+
+/*body *{
+    outline : 2px solid red ;
+}*/
+
+/* TYPOS */
+@font-face {
+    font-family: "Karrik-Regular";
+    src: local("Karrik-Regular"),
+      url("Karrik-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Karric-Italic";
+    src: local("Karric-Italic"),
+      url("Karrik-Italic.woff2") format("woff2");
+}
+
+p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: var(--tailleparagraphe);
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: calc(3*var(--tailleh1));
+  line-height: 1.3;
+  letter-spacing: 0.08rem;
+  font-weight: 100;
+}
+
+body {
+    font-family: Karrik-Regular;
+    background-color: var(--bg);
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    --tailleparagraphe: clamp(1rem, 0.95rem + 0.25vw ,1.25rem);
+    --tailleh2: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+    --tailleh1: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+    --rythmeS: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+    --rythmeM: clamp(1.875rem, 1.7814rem + 0.468vw, 2.343rem);
+    --rythmeL: clamp(2.343rem, 2.226rem + 0.585vw, 2.928rem);
+    --rythmeXL: clamp(2.928rem, 2.782rem + 0.731vw, 3.66rem);
+    --bg: #7a8cb7;
+    --txt: black;
+    --accent: #ffd0aea5;
+}
+
+/*--GRID CONTAINER---*/
+
+.container {
+  display: grid;
+  margin: var(--rythmeXL);
+  align-content: center;
+  justify-content: center;
+  gap: var(--rythmeXL);
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: max-content min-content 15vh;
+  grid-template-areas: 
+  "heroimg herotitle"
+  "heroimg heroparagraph"
+  "heroimg largepic";
+}
+
+.head{
+  grid-area: herotitle;
+  display: flex;
+  align-items: center;
+}
+
+.leftimgcontainer {
+  grid-area: heroimg;
+  position: relative;
+}
+
+.hero-paragraph {
+  grid-area: heroparagraph;
+}
+
+.bottom {
+  grid-area: largepic;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: var(--rythmeM);
+}
+
+
+/*---Flex items and image treatment----*/
+
+.bottom-text {
+  flex: 0 1 25%;
+}
+
+.bottom-img {
+  flex: 0 1 75%;
+  min-width: 0%;
+  object-fit: cover;
+  border-radius: var(--rythmeM);
+  object-position: 0% 85%;
+  height: 100%;
+}
+.hero-img {
+  object-fit: cover;
+  border-radius: var(--rythmeM);
+  height: 100%;
+}
+/*-----STYLE----*/
+
+.head i {
+  font-size: calc(3*var(--tailleh1));
+}
+
+.highlight {
+  position: relative;
+}
+
+.p-highlight {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.highlight::after{
+  position: absolute;
+  content: "";
+  height: 2.5rem;
+  width: 100%;
+  left: 0;
+  bottom: 20px;
+  background-color: var(--accent) ;
+  z-index: -1;
+  border-radius: 0.5rem;
+  margin-inline: -0.5rem;
+}
+
+.fa-solid {
+  color: var(--accent);
+}
+
+.fa-solid:hover {
+  color: var(--txt);
+  cursor: pointer;
+}
+
+
+/*----MODAL MENU---*/
+.modal{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -20vw;  /* position the top  edge of the element at the middle of the parent */
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  border-radius: var(--rythmeM);
+  color: rgb(132, 137, 142);
+  padding: var(--rythmeM);
+  }
+
+.appear{
+  opacity: 0.7;
+  left: 0;
+  transition: all 1.5s ease-out, opacity 1.5s ease-out;
+}
+
+.nav-list {
+  height: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: calc(1.5*var(--tailleh1));
+  font-weight: bolder;
+  display: flex;
+  gap: var(--rythmeM);
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.nav-item:hover::before{
+  content:"• ";
+  color: aliceblue;
+}
+.nav-item:hover{
+  color: aliceblue;
+  cursor: pointer;
+}
+
+/*-------<950px width-----*/
+
+@media (width<950px) {
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: var(--rythmeM);
+  height: auto;
+}
+.head {
+  flex-wrap: wrap;
+}
+h1 {
+  font-size: var(--tailleh1);
+  font-weight: 500;
+}
+.leftimgcontainer{
+  display: flex;
+  flex-direction: column;
+}
+.hero-img{
+  height: 15vh;
+  object-position: 0% 65%;
+}
+.head i {
+  margin-top: var(--rythmeM);
+  font-size: var(--tailleh1);
+}
+.highlight::after{
+  display: none;
+}
+
+.bottom-img {
+  height: 15vh;
+}
+}

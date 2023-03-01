@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <!--Mouse follower-->
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+
+    <title>Sliding menu and art homepage</title>
+</head>
+<body>
+    <main class="container">
+        <div class="leftimgcontainer">
+            <img class="hero-img" src="hero.jpg" alt="country house painting by Pieter Gerardus van Os"></img>
+            <nav class="modal">
+                <ul class="nav-list">
+                    <li class="nav-item">PATRAPPA</li>
+                    <li class="nav-item">SGUOTTI</li>
+                    <li class="nav-item">FLEMMA</li>
+                    <li class="nav-item">FILGRI</li>
+                    <li class="nav-item">PENDANT</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="head">
+            <h1 class="hero-title" data-cursor-text="Welcome">Lorem ipsum <span class="highlight">dolor</span> sit amet.</h1>
+            <i class="fa-solid fa-compass" id="navbutton"></i>
+        </div>
+        <p class="hero-paragraph">Lorem ipsum dolor sit amet consectetur <span class="p-highlight">adipisicing</span> elit. Provident dignissimos aliquam alias aperiam rerum <span class="p-highlight">perferendis</span> neque veniam, quos enim? Sapiente debitis similique inventore officia ipsam vitae doloribus facere blanditiis eum?</p>
+        <div class="bottom">
+            <p class="bottom-text">Sapiente debitis similique inventore officia ipsam.</p>
+            <img class="bottom-img" src="bottom.jpg" alt="farmer family painting by Pieter Gerardus van Os">
+        </div>
+    </main>
+    <script>
+        const cursor = new MouseFollower({
+    el: null,
+    container: ".container",
+    className: 'mf-cursor',
+    innerClassName: 'mf-cursor-inner',
+    textClassName: 'mf-cursor-text',
+    mediaClassName: 'mf-cursor-media',
+    mediaBoxClassName: 'mf-cursor-media-box',
+    iconSvgClassName: 'mf-svgsprite',
+    iconSvgNamePrefix: '-',
+    iconSvgSrc: '',
+    dataAttr: 'cursor',
+    hiddenState: '-hidden',
+    textState: '-text',
+    iconState: '-icon',
+    activeState: '-active',
+    mediaState: '-media',
+    stateDetection: {
+        '-pointer': 'a,button',
+        '-hidden': 'iframe'
+    },
+    visible: true,
+    visibleOnState: false,
+    speed: 0.55,
+    ease: 'expo.out',
+    overwrite: true,
+    skewing: 0,
+    skewingText: 2,
+    skewingIcon: 2,
+    skewingMedia: 2,
+    skewingDelta: 0.001,
+    skewingDeltaMax: 0.15,
+    stickDelta: 0.15,
+    showTimeout: 20,
+    hideOnLeave: true,
+    hideTimeout: 300,
+    hideMediaTimeout: 300
+});
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
