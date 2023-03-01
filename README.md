@@ -1,4 +1,5 @@
 # Sliding Menu and art landingpage
+![Sliding-Menu-Demo](https://github.com/teotimepacreau/Sliding-Menu-and-art-landingpage-Day4-of-100DaysOfCode/blob/main/Sliding-menu.gif)
 
 # Project goal
 - grid template areas for the UI
@@ -9,3 +10,7 @@
 - Mouse follower with "Cuberto Mouse Follower" lib
 - :hover and ::before to anim menu items
 - responsive handle
+- Vanilla JS class toggle with click listener
+
+🛠️
+HTML, CSS, Vanilla JavaScript
