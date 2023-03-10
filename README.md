@@ -1,5 +1,5 @@
 # Sliding Menu and art landingpage
-![Sliding-Menu-Demo](https://github.com/teotimepacreau/Sliding-Menu-and-art-landingpage-Day4-of-100DaysOfCode/blob/main/Sliding-menu.gif)
+![Sliding-Menu-Demo-and-art-landing-page](https://github.com/teotimepacreau/Sliding-Menu-and-art-landingpage-Day4-of-100DaysOfCode/blob/main/Sliding-menu.gif)
 
 # Project goal
 - grid template areas for the UI
@@ -14,3 +14,7 @@
 
 # 🛠️
 HTML, CSS, Vanilla JavaScript
+
+# Static capture
+
+![Sliding-menu-and-art-landing-page-capture](https://github.com/teotimepacreau/Sliding-Menu-and-art-landingpage-Day4-of-100DaysOfCode/blob/main/Art-landing-page-and-slider-menu.png)
